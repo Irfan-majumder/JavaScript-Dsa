@@ -78,3 +78,74 @@ console.log(allPeoples2);
 
   console.log(arr3);
   console.log(user1); // { name: 'john', age: 25 }
+
+  
+
+ const person = {
+  name: 'john',
+  age: 25,
+  country : 'USA'
+ };
+
+ const { name: personName, age:personAge, country:personCountry } = person;
+ console.log( personName, personAge, personCountry);
+
+
+
+
+// Function Destructuring in js
+
+const person2 = {
+
+  name: 'john',
+  age: 25,
+  country: 'USA'
+
+};
+
+function printPersonInfo(person) {
+    console.log(` Name: ${person.name}`);
+    console.log(` Age: ${person.age}`);
+    console.log(` Country: ${person.country}`);
+}
+
+// By Destructuring the functions parameters
+
+function printPersonInfo1({name,age,country}) {
+  console.log(` Name: ${name}`);
+  console.log(` Age: ${age}`);
+  console.log(` Country: ${country}`);
+}
+
+printPersonInfo(person);
+printPersonInfo1(person);
+
+
+
+
+let options = {
+  title: "My Menu",
+  items: ['item1', 'item2', 'item3'],
+
+};
+
+function showMenu({title,width:w=100,height:h = 200, items:[item1,item2]}) {
+  console.log(`${title} ${w} ${h}`)
+  console.log(item1);
+  console.log(item2);
+};
+showMenu(options);
+
+
+
+
+let options1 = {
+  title: "My Menu",
+  items: ['item1', 'item2', 'item3'],
+
+};
+
+function showMenu1({title}) {
+  console.log(`${title}`);
+}
+showMenu1(options1); // undefined
